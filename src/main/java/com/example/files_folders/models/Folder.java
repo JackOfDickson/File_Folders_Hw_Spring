@@ -17,12 +17,12 @@ public class Folder {
     private String title;
 
     @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"folders"})
+    @JsonIgnoreProperties({"folder"})
     private List<ComputerFile> files;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    @JsonIgnoreProperties({"folders"})
+    @JsonIgnoreProperties({"folder"})
     private User user;
 
     public Folder(String name, User user) {
